@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .dropdown-check-list {
+            display: inline-block;
+        }
+        
+        .dropdown-check-list .anchor {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px 50px 5px 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .dropdown-check-list .anchor:after {
+            position: absolute;
+            content: "";
+            border-left: 2px solid black;
+            border-top: 2px solid black;
+            padding: 5px;
+            right: 10px;
+            top: 20%;
+            -moz-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+        
+        .dropdown-check-list .anchor:active:after {
+            right: 8px;
+            top: 21%;
+        }
+        
+        .dropdown-check-list ul.items {
+            padding: 2px;
+            display: none;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        
+        .dropdown-check-list ul.items li {
+            list-style: none;
+        }
+        
+        .dropdown-check-list.visible .anchor {
+            color: #0094ff;
+        }
+        
+        .dropdown-check-list.visible .items {
+            display: block;
+        }
+        
+        .btn-Artist {
+            display: flex;
+            margin-bottom: 75vh;
+            flex-direction: column;
+            margin-left: 13vw;
+            margin-top: -18vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- This is for Navigation bar with Search form -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <!-- <span class="glyphicon glyphicon-name"></span> -->
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <!-- This is the container for holding rest of components -->
+    <div class="container-fluid">
+        <h3>Adding a new Song</h3>
+        <div style="margin: 4px;">
+            <label>Song Name</label>
+            <input style="margin-left: 15px;" name="songName" onclick="add() ">
+        </div>
+        <div id="res"></div>
+        <script>
+            function add() {
+                var n1 = parent(document.getElementById("n1").value);
+                var n2 = parent(document.getElementById("n2").value);
+                var sum = n1 + n2;
+                document.getElementById("res").innerHTML
+            }
+        </script>
+        <div style="margin: 4px;"></div>
+        <label>Date Released</label>
+        <input name="Date" onclick="add() ">
+        <div style="display:flex;margin-top: 30px;">
+            <label> Artwork</label>
+            <input style="margin-left: 15px;" type="file" id="img" name="img" accept="image/*">
+        </div>
+        <div style="display:flex;margin-top: 30px;">
+            <div id="list1" class="dropdown-check-list" style="width: 100%;" tabindex="100">
+                <label>Artists</label>
+                <span class="anchor" style="margin-left: 15px; width: 30%;">Search </span>
+                <ul class="items" style="position:fixed; width: 30%; left:5%; z-index: 1;">
+                    <li style="display: flex; justify-content: space-between;">Lewis Cadalpi<input type="checkbox" /> </li>
+                    <li style="display: flex; justify-content: space-between;">Post Malone<input type="checkbox" /> </li>
+                    <li style="display: flex; justify-content: space-between;">Justin Bieber<input type="checkbox" /> </li>
+                    <li style="display: flex; justify-content: space-between;">Quavo <input type="checkbox" /> </li>
+                    <li style="display: flex; justify-content: space-between;">Juice WRLD <input type="checkbox" /> </li>
+
+                </ul>
+                <button style="margin-left: 15px;" data-toggle="modal" data-target="#exampleModalCenter"> + Add Artist</button>
+            </div>
+        </div>
+        <div style="margin-top: 110px; margin-left: 68px;">
+            <button>Cancel</button>
+            <button>Save</button>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" style="padding-right:10px;padding-top: 10px;" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <div class="modal-body">
+                    <div style="margin: 4px;">
+                        <label>Artist Name</label>
+                        <input style="margin-left: 15px;" name="songName" onclick="add() ">
+                    </div>
+                    <div style="margin: 4px;">
+                        <label>Date of Birth</label>
+                        <input type="date" placeholder="" style="margin-left: 15px;" name="songName" onclick="add() ">
+                    </div>
+                    <div style="display: flex; margin: 4px;">
+                        <label>Bio</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" style="background-color:transparent; color: black;" data-dismiss="modal">cancel</button>
+                    <button type="button" style="background-color:black; color: white;">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var checkList = document.getElementById('list1');
+        checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+            if (checkList.classList.contains('visible'))
+                checkList.classList.remove('visible');
+            else
+                checkList.classList.add('visible');
+        }
+
+        function add() {
+            var n1 = parent(document.getElementById("n1").value);
+            var n2 = parent(document.getElementById("n2").value);
+            var sum = n1 + n2;
+            document.getElementById("res").innerHTML
+        }
+    </script>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

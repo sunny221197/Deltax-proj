@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- This is for Navigation bar with Search form -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <!-- <span class="glyphicon glyphicon-name"></span> -->
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- This is the container for holding rest of components -->
+    <div class="container-fluid">
+        <!-- for top-10-song list -->
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Top 10 Song</h3>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-primary pull-right" href="./addsong.html" role="button">Add a Song</a>
+            </div>
+        </div>
+        <!-- list-of-song -->
+        <div class="jumbotron">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Artwork</th>
+                        <th scope="col">Song</th>
+                        <th scope="col">date of release</th>
+                        <th scope="col">Artists</th>
+                        <th scope="col">Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <div class="text-center">
+                                <img src="./Images/Artists_1.jpg" class="rounded img-thumbnail" alt="..." width="100" height="100">
+                            </div>
+                        </th>
+                        <td>Alexa</td>
+                        <td>july 21, 2019</td>
+                        <td>Lewis capaldi</td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="text-center">
+                                <img src="./Images/Artists_5.jpg" class="rounded img-thumbnail" alt="..." width="80" height="80">
+                            </div>
+                        </th>
+                        <td>Circles</td>
+                        <td>September 27, 2019</td>
+                        <td>post Malone</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="text-center">
+                                <img src="./Images/Artists_2.jpg" class="rounded img-thumbnail" alt="..." width="100" height="100">
+                            </div>
+                        </th>
+                        <td>Intentions</td>
+                        <td>January 02, 2020</td>
+                        <td>Justin Bieber,Quavo</td>
+                        <td>⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="text-center">
+                                <img src="./Images/Artists_4.jpg" class="rounded img-thumbnail" alt="..." width="100" height="100">
+                            </div>
+                        </th>
+                        <td>Larry the Bird</td>
+                        <td>July 10, 2019</td>
+                        <td>Post Malone</td>
+                        <td>⭐⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- for top-10-artists list -->
+        <div class="top-10-artists">
+            <h3>Top 10 Artists</h3>
+        </div>
+        <!-- top-10-artists -->
+        <div class="jumbotron">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Artists</th>
+                        <th scope="col">Date of Birth</th>
+                        <th scope="col">song</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Lewis Capaldi</th>
+                        <td>July 21, 2002</td>
+                        <td>Someone you Loved, Before You Go,Bruises,Hold me While you Wait</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Post Malone</th>
+                        <td>September 27, 2019</td>
+                        <td>Circles,Rockstar,Sunflower,Psycho,Wow,Better Now</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Justin Bieber,Quavo</th>
+                        <td>January 02, 2020</td>
+                        <td>Intentions, Let me Love you, Despacito, Yummy, I don't care</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Post Malone</th>
+                        <td>July 10, 2019</td>
+                        <td>Larry the Bird, I am singer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
